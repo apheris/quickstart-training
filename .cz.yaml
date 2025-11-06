@@ -1,0 +1,13 @@
+commitizen:
+  jira_base_url: https://apheris.atlassian.net
+  jira_prefix:
+    - IN-
+    - DSE-
+    - QE-
+    - EN-
+    - PRISEC-
+    - HEL-
+  name: cz_github_jira_conventional
+  tag_format: v$version
+  version: 0.0.1
+  github_repo: apheris/quickstart-training

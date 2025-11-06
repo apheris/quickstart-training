@@ -1,0 +1,30 @@
+[tool.mypy]
+plugins = ["pydantic.mypy"]
+files = ["src"]
+explicit_package_bases = true
+
+[[tool.mypy.overrides]]
+module = "nvflare.*"
+ignore_missing_imports = true
+
+
+[tool.black]
+line-length = 90
+target-version = ["py310"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+src_paths = ["src", "tests"]
+known_first_party = ["app", "tests"]
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "src/logistic_regression_quickstart"]
+
+[tool.coverage.path]
+source = ["src"]
+
+[tool.coverage.run]
+branch = true
+parallel = true
