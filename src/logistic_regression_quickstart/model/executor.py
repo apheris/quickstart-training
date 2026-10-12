@@ -27,7 +27,7 @@ class MockLogisticRegression:
 
 class TrainingExecutor(GatewayLogSenderMixin, Executor):
 
-    def __init__(self, cohorts: dict[str, str]):
+    def __init__(self):
         """
         Arguments are populated as an argument to the executor in the client configuration
         by the secure runtime, for more information, see`
@@ -38,7 +38,6 @@ class TrainingExecutor(GatewayLogSenderMixin, Executor):
         """
         super().__init__()
 
-        self.cohorts = cohorts
         self.model = MockLogisticRegression()
 
         self.dataset_id: str | None = None
@@ -89,9 +88,7 @@ class TrainingExecutor(GatewayLogSenderMixin, Executor):
         # execution of your task. Messages will also be logged to the client logs.
         self._send_to_server_log(
             fl_ctx,
-            f"Received task {task_name} for dataset {self.dataset_id}, with cohorts: "
-            f"{self.cohorts}.",
-            "INFO",
+            f"Received task {task_name} for dataset {self.dataset_id} " "INFO",
         )
 
         if abort_signal.triggered:

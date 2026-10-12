@@ -20,7 +20,7 @@ def mock_signal():
 @pytest.fixture
 def executor():
     """Fixture to create an instance of TrainingExecutor."""
-    return TrainingExecutor(cohorts={})
+    return TrainingExecutor()
 
 
 def test_execute(fl_ctx, mock_signal, executor, tmp_path_app_root, mocker):

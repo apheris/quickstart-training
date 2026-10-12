@@ -22,7 +22,7 @@ def load_client_config(payload: LogisticRegressionPayload) -> dict:
                 "executor": {
                     "path": "logistic_regression_quickstart.model.executor"
                     ".TrainingExecutor",
-                    "args": {"cohorts": payload.cohorts},
+                    "args": {},
                 },
             }
         ],
@@ -44,8 +44,8 @@ def load_server_config(payload: LogisticRegressionPayload, num_clients: int) -> 
         "workflows": [
             {
                 "id": "scatter_and_gather",
-                "path": "nvflare.app_common.workflows.scatter_and_gather"
-                ".ScatterAndGather",
+                "path": "logistic_regression_quickstart.model.controller"
+                ".TrainingController",
                 "args": {
                     "min_clients": num_clients,
                     "num_rounds": payload.num_rounds,

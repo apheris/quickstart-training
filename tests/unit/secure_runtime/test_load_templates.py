@@ -13,7 +13,7 @@ from logistic_regression_quickstart.secure_runtime.payload import (
 
 def testload_client_config(mocker, tmp_path: Path):
     # Create a mock payload object with some fake data
-    payload = LogisticRegressionPayload(task_id="train", cohorts={}, num_rounds=2)
+    payload = LogisticRegressionPayload(task_id="train", num_rounds=2)
 
     # Call the function to be tested
     config = load_client_config(payload)
@@ -24,7 +24,7 @@ def testload_client_config(mocker, tmp_path: Path):
 
 def testload_server_config(mocker, tmp_path: Path):
     # Create a mock payload object with some fake data
-    payload = LogisticRegressionPayload(task_id="train", cohorts={}, num_rounds=2)
+    payload = LogisticRegressionPayload(task_id="train", num_rounds=2)
 
     # Call the function to be tested
     config = load_server_config(payload, num_clients=2)

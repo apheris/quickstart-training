@@ -68,7 +68,7 @@ def main(args: argparse.Namespace):
     args.workspace_path.mkdir(exist_ok=True, parents=True)
     args.jobs_path.mkdir(exist_ok=True, parents=True)
 
-    payload = LogisticRegressionPayload(task_id="train", cohorts={})
+    payload = LogisticRegressionPayload(task_id="train")
 
     dataset_to_gw = {
         dataset_id: f"site-{i+1}" for i, dataset_id in enumerate(args.dataset_ids)
