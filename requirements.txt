@@ -1,3 +1,2 @@
-nvflare==2.7.2
-apheris-utils[nvflare,simulator]==0.31.0
-pydantic-settings 2.14.2
+nvflare==2.9.0
+apheris-utils[nvflare,simulator]==0.39.1

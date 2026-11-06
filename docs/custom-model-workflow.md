@@ -41,7 +41,7 @@ earlier.
 Finally, use the Apheris CLI to update the model version in the model registry:
 
 ```console
-apheris models add-version --version <version_number> --engine nvflare:2.5.2 --digest <digest> --commit-hash <hash> <model_id>
+apheris models add-version --version <version_number> --engine-version nvflare:2.9.0 --digest <digest> --commit-hash <hash> <model_id>
 ```
 
 * `<version_number>` must match the tag pushed to Quay.
