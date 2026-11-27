@@ -1,2 +1,2 @@
 nvflare==2.9.0
-apheris-utils[nvflare,simulator]==0.39.1
+apheris-utils[nvflare,simulator]==0.41.0
